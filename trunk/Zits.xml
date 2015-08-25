@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+ 
+   <Content type="html"><![CDATA[
+   <div id="content_div"></div>
+   <script type="text/javascript">
+
+   function displayGreeting () {
+     // Get current time
+     var today = new Date();
+     var time = today.getTime();
+     var html = "";
+
+     var element = document.getElementById('content_div');  
+     element.style.height=250;
+
+     var year = today.getFullYear();
+     var day = today.getDate();
+     var month = today.getMonth() + 1;
+    
+     // Display a greeting based on the myname userpref
+     html += "<br><img src='http://content.comicskingdom.net/Zits/Zits." + year + month + day + ".gif'";
+
+     element.innerHTML = html;
+   }
+   // Pass the userprefs for this module instance to the function
+   // (allows users to include multiple module instances on their page)
+   gadgets.util.registerOnLoadHandler(displayGreeting);
+  
+   </script>
+   ]]>  
+  </Content>
+</Module>
